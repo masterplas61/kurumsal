@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tank Kesim Planı – 1500x3000 Plaka Otomatik Bölme</title>
+  <style>
+    /* (Senin gönderdiğin tüm CSS kodları burada yer alacak) */
+    body { font-family: Arial; background: #f0f0f0; padding: 20px; }
+    .container { background: white; max-width: 1000px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, select, button, label { width: 100%; padding: 10px; margin: 5px 0; font-size: 1em; }
+    canvas { border: 1px solid #ccc; margin: 20px 0 5px 0; }
+    h2 { text-align: center; }
+    #sonuclar { font-size: 1.1em; }
+    .fiyatTablo { border-collapse: collapse; margin-top:10px; }
+    .fiyatTablo td, .fiyatTablo th { border: 1px solid #bbb; padding: 5px 10px; }
+    .fiyatTablo th { background: #f3fafb; }
+    .bilgiSatiri { background: #e4f4ff; font-weight:bold; padding:6px 0 4px 0; }
+    #pdfBtn { margin-bottom: 20px; }
+    #pdf-icerik { margin-top: 32px; padding: 16px; background: #fff; }
+    #saveDrawingsBtn { background: #47b7ff; color: #fff; border: none; border-radius: 5px; }
+    #saveDrawingsBtn:hover { background: #3a95ca; }
+    .fire-list { margin: 0 0 15px 0; color: #333; font-size: 0.98em; }
+    .fire-list ul { margin: 5px 0 5px 18px; padding: 0; }
+    .fire-list li { margin-bottom: 2px; }
+    .save-canvas-btn {
+      display: inline-block;
+      width: 160px;
+      margin: 5px 0 15px 5px;
+      background: #54d37d;
+      color: #fff;
+      padding: 7px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      vertical-align: middle;
+    }
+    .save-canvas-btn:hover {
+      background: #36b85e;
+    }
+    .save-format-select {
+      width: auto;
+      display: inline-block;
+      margin-left: 0;
+      margin-right: 7px;
+      vertical-align: middle;
+      padding: 7px 15px;
+      font-size: 1em;
+    }
+    .drawBox { margin-bottom: 12px; display: inline-block; }
+    .bolunmus { color: #b70; font-size: 0.95em; margin-bottom: 6px;}
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Tank Kesim Planı – 1500x3000 Plakaya Otomatik Bölme</h2>
+  <label>Firma Adı</label>
+  <input type="text" id="firma" placeholder="Firma adını yazınız">
+  <label>Proje Adı</label>
+  <input type="text" id="proje" placeholder="Proje adını yazınız">
+  <label>Tank Genişliği (mm)</label>
+  <input type="number" id="width" value="2000">
+  <label>Tank Boyu (mm)</label>
+  <input type="number" id="length" value="2500">
+  <label>Tank Yüksekliği (mm)</label>
+  <input type="number" id="height" value="2000">
+  <label>Üst Kapağı</label>
+  <select id="cover">
+    <option value="acik">Üstü Açık</option>
+    <option value="kapali">Üstü Kapalı</option>
+  </select>
+  <label>Malzeme Kalınlığı (mm)</label>
+  <select id="thickness"></select>
+  <label>Malzeme Türü</label>
+  <select id="material">
+    <option value="0.96">HDPE (0.96 g/cm³)</option>
+    <option value="0.92">PP (0.92 g/cm³)</option>
+  </select>
+  <label>Simona Fiyatı (€/kg)</label>
+  <input type="number" id="simona_price" value="3.5">
+  <label>Fırat Fiyatı (€/kg)</label>
+  <input type="number" id="firat_price" value="2.9">
+  <label>Plaka Genişliği (mm)</label>
+  <input type="number" id="plaka_w" value="1500" readonly>
+  <label>Plaka Boyu (mm)</label>
+  <input type="number" id="plaka_l" value="3000" readonly>
+  <label>Euro/TL Kuru</label>
+  <input type="number" id="eurtl" value="35.5" step="0.01">
+  <label>Satış Fiyatı Çarpanı (ör: 2, 2.5, 3)</label>
+  <input type="number" id="sell_factor" value="2" step="0.1">
+  <button onclick="hesapla()">Hesapla ve Yerleştir</button>
+  <button id="pdfBtn" onclick="pdfAktar()">PDF Olarak Kaydet</button>
+  <button id="saveDrawingsBtn" onclick="cizimleriKaydet()">Tüm Çizimleri Kaydet</button>
+  <div id="pdf-icerik">
+    <p id="sonuclar"></p>
+    <div id="cizimler"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+/* (Senin gönderdiğin tüm Javascript kodları burada yer alacak) */
+// Kalınlık dropdown'unu otomatik doldur
+window.onload = function() { var sel = document.getElementById("thickness"); for(var i=1;i<=50;i++) { var opt = document.createElement("option"); opt.value = i; opt.text = i; sel.appendChild(opt); } sel.value = 10; }
+// ... (Javascript kodunun tamamı burada olacak, yukarıda paylaştığın gibi)
+function bolParca(parca, plakaW, plakaL) { /* ... */ }
+function hesapla() { /* ... */ }
+function pdfAktar() { /* ... */ }
+function cizimleriKaydet() { /* ... */ }
+</script>
+</body>
+</html>
