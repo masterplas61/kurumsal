@@ -1,0 +1,82 @@
+.tank-form-container {
+  max-width: 430px;
+  margin: 48px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 15px 0 #0002;
+  padding: 32px 32px 24px 32px;
+}
+.tank-form-container h2 {
+  color: #0e3e8e;
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+.tank-form-container label {
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  display: block;
+}
+.tank-form-container input,
+.tank-form-container select {
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+.tank-form-container .btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.tank-form-container button {
+  font-weight: bold;
+  padding: 11px 0;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 2px;
+}
+.tank-form-container .hesapla-btn {
+  background: #199cdf;
+  color: #fff;
+  transition: background 0.1s;
+}
+.tank-form-container .hesapla-btn:hover {
+  background: #107fc6;
+}
+.tank-form-container .kaydet-btn {
+  background: #18c671;
+  color: #fff;
+  transition: background 0.1s;
+}
+.tank-form-container .kaydet-btn:hover {
+  background: #14a55e;
+}
+.tank-form-container .dvs-btn {
+  background: #ff9800;
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-left: 4px;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-size: 15px;
+  transition: background 0.15s;
+}
+.tank-form-container .dvs-btn:hover {
+  background: #ffa828;
+}
+@media (max-width: 600px) {
+  .tank-form-container {
+    padding: 14px 4vw 18px 4vw;
+    max-width: 97vw;
+  }
+}
